@@ -1,0 +1,243 @@
+export interface StudyTip {
+  id: string;
+  title: string;
+  technique: string;
+  category: 'Focus & Deep Work' | 'Memory & Retention' | 'Productivity' | 'Mindset & Motivation' | 'Health & Energy';
+  summary: string;
+  actionStep: string;
+  whyItWorks: string;
+  quote?: string;
+  author?: string;
+  badgeColor: {
+    bg: string;
+    text: string;
+    border: string;
+  };
+}
+
+export const STUDY_TIPS: StudyTip[] = [
+  {
+    id: 'feynman-technique',
+    title: 'Teach It to a 10-Year-Old',
+    technique: 'The Feynman Technique',
+    category: 'Memory & Retention',
+    summary: 'The best test of true mastery is your ability to explain a complex topic in simple, jargon-free language.',
+    actionStep: 'Take a blank paper or notes app. Write down what you learned today as if explaining it to a middle school student. Identify every gap where you stumble and review only those parts.',
+    whyItWorks: 'Active simplification exposes knowledge illusions and forces neurological re-encoding of concepts into long-term memory.',
+    quote: 'If you can’t explain it simply, you don’t understand it well enough.',
+    author: 'Richard Feynman',
+    badgeColor: {
+      bg: 'bg-emerald-500/10',
+      text: 'text-emerald-400',
+      border: 'border-emerald-500/20',
+    },
+  },
+  {
+    id: 'pomodoro-50-10',
+    title: 'The 50/10 Ultradian Rhythm',
+    technique: 'Ultradian Deep Work Sprint',
+    category: 'Focus & Deep Work',
+    summary: 'Work with laser intensity for 50 uninterrupted minutes, then take a strict 10-minute non-screen recovery break.',
+    actionStep: 'Put your phone in another room. Set the SkillTracker Focus Timer for 50 minutes. Close all browser tabs not directly relevant to this task.',
+    whyItWorks: 'Human attention naturally peaks and dips in 90-minute ultradian cycles. Short pauses prevent cognitive fatigue and replenish dopamine reserves.',
+    quote: 'Deep work is the ability to focus without distraction on a cognitively demanding task.',
+    author: 'Cal Newport',
+    badgeColor: {
+      bg: 'bg-indigo-500/10',
+      text: 'text-indigo-400',
+      border: 'border-indigo-500/20',
+    },
+  },
+  {
+    id: 'active-recall',
+    title: 'Close the Book Before You Take Notes',
+    technique: 'Active Recall Testing',
+    category: 'Memory & Retention',
+    summary: 'Passive rereading creates false fluency. Testing yourself produces up to 300% higher long-term retention than highlighting.',
+    actionStep: 'After reading a chapter or documentation, close the screen. Immediately write down 3 key concepts or code structures from memory before checking.',
+    whyItWorks: 'Neural retrieval practice strengthens synaptic connections far more than repeated sensory consumption.',
+    quote: 'Retrieval practice produces durable learning and superior performance under pressure.',
+    author: 'Cognitive Science Research',
+    badgeColor: {
+      bg: 'bg-cyan-500/10',
+      text: 'text-cyan-400',
+      border: 'border-cyan-500/20',
+    },
+  },
+  {
+    id: 'five-minute-rule',
+    title: 'The 5-Minute Overcoming-Friction Rule',
+    technique: 'Micro-Action Momentum',
+    category: 'Productivity',
+    summary: 'When procrastination strikes, commit to working for just 5 minutes with complete permission to stop if you want.',
+    actionStep: 'Tell yourself: "I will write one function / open one lesson for exactly 5 minutes." 80% of the time, overcoming activation energy is all you need to keep going.',
+    whyItWorks: 'Procrastination is an emotional regulation issue, not a time management flaw. Lowering the bar calms the amygdala.',
+    quote: 'Action produces motivation, rarely the other way around.',
+    author: 'James Clear',
+    badgeColor: {
+      bg: 'bg-amber-500/10',
+      text: 'text-amber-400',
+      border: 'border-amber-500/20',
+    },
+  },
+  {
+    id: 'spaced-repetition',
+    title: 'Beat the Forgetting Curve',
+    technique: 'Spaced Repetition Intervals',
+    category: 'Memory & Retention',
+    summary: 'Review material just as you are about to forget it: Day 1, Day 3, Day 7, Day 14, and Day 30.',
+    actionStep: 'Glance at the skills you studied 3 days ago. Spend 3 minutes reviewing your previous study log notes before starting today’s new topic.',
+    whyItWorks: 'Ebbinghaus demonstrated that spaced review flattens the forgetting curve, transferring knowledge into crystallised memory.',
+    quote: 'Spacing your reviews forces your brain to reconstruct memory traces, making them permanent.',
+    author: 'Hermann Ebbinghaus',
+    badgeColor: {
+      bg: 'bg-purple-500/10',
+      text: 'text-purple-400',
+      border: 'border-purple-500/20',
+    },
+  },
+  {
+    id: 'parkinsons-law',
+    title: 'Shrink Your Time Window',
+    technique: 'Parkinson’s Law Artificial Deadlines',
+    category: 'Productivity',
+    summary: 'Work expands to fill the time available for its completion. Give yourself 3 hours, it takes 3 hours. Give yourself 45 minutes, you finish in 45.',
+    actionStep: 'Pick one sub-goal for this hour and set a timer for 35 minutes. Treat it like a strict sprint.',
+    whyItWorks: 'Tight constraints eliminate low-value perfectionism and force subconscious prioritization of essential outcomes.',
+    quote: 'Work expands so as to fill the time available for its completion.',
+    author: 'C. Northcote Parkinson',
+    badgeColor: {
+      bg: 'bg-rose-500/10',
+      text: 'text-rose-400',
+      border: 'border-rose-500/20',
+    },
+  },
+  {
+    id: 'blurting-method',
+    title: 'The Blurting Brain Dump',
+    technique: 'The Blurting Method',
+    category: 'Memory & Retention',
+    summary: 'Spend 10 minutes writing down literally everything you can remember without looking at your notes.',
+    actionStep: 'Grab a sheet or fresh text file. Dump bullet points, equations, syntax, and concepts for 7 minutes straight. Then open your notes in red ink to see what you missed.',
+    whyItWorks: 'Pinpoints precise blind spots in minutes rather than spending hours rereading familiar chapters.',
+    quote: 'You do not know what you don’t know until you try to produce it from an empty page.',
+    author: 'Active Learning Principle',
+    badgeColor: {
+      bg: 'bg-sky-500/10',
+      text: 'text-sky-400',
+      border: 'border-sky-500/20',
+    },
+  },
+  {
+    id: 'interleaving-practice',
+    title: 'Mix Up Your Practice Problems',
+    technique: 'Interleaving Effect',
+    category: 'Focus & Deep Work',
+    summary: 'Instead of doing 20 identical exercises (blocking), alternate between different problem types and skill challenges.',
+    actionStep: 'If studying code, do 1 frontend component, 1 SQL query, and 1 algorithm problem rather than 10 of the exact same category.',
+    whyItWorks: 'Interleaving forces your brain to continually choose the correct strategy, building discrimination skills and real-world adaptability.',
+    quote: 'Interleaving feels harder and slower, but produces substantially superior long-term retention.',
+    author: 'Dr. Robert Bjork',
+    badgeColor: {
+      bg: 'bg-violet-500/10',
+      text: 'text-violet-400',
+      border: 'border-violet-500/20',
+    },
+  },
+  {
+    id: 'environment-design',
+    title: 'Architect Your Physical Study Space',
+    technique: 'Environment Priming',
+    category: 'Focus & Deep Work',
+    summary: 'Willpower is an exhaustible battery; your physical environment should make focus the default path of least resistance.',
+    actionStep: 'Keep only a glass of water, your notepad, and your laptop on your desk. Turn off desktop notifications and place your phone outside arm’s reach.',
+    whyItWorks: 'Visual friction and contextual cues trigger automatic neural habits without depleting prefrontal cortex willpower.',
+    quote: 'Disciplined people are not better at resisting temptation; they simply structure environments with fewer temptations.',
+    author: 'Atomic Habits',
+    badgeColor: {
+      bg: 'bg-teal-500/10',
+      text: 'text-teal-400',
+      border: 'border-teal-500/20',
+    },
+  },
+  {
+    id: 'zeigarnik-effect',
+    title: 'Leave a Sentence Unfinished',
+    technique: 'The Zeigarnik Effect',
+    category: 'Mindset & Motivation',
+    summary: 'The human brain remembers unfinished tasks better than completed ones. Use this to jumpstart tomorrow’s session.',
+    actionStep: 'When finishing your study block today, leave the next exercise halfway planned or write tomorrow’s opening sentence. Starting tomorrow will take zero effort.',
+    whyItWorks: 'An open cognitive loop creates subtle healthy tension that makes resuming effortless.',
+    quote: 'Uncompleted tasks create cognitive tension that prompts our minds to return to them.',
+    author: 'Bluma Zeigarnik',
+    badgeColor: {
+      bg: 'bg-blue-500/10',
+      text: 'text-blue-400',
+      border: 'border-blue-500/20',
+    },
+  },
+  {
+    id: 'two-day-rule',
+    title: 'Never Miss Twice in a Row',
+    technique: 'The Two-Day Rule',
+    category: 'Mindset & Motivation',
+    summary: 'Life happens and missing one day is an accident. Missing two consecutive days is the start of an anti-habit.',
+    actionStep: 'Even on busy, chaotic days, log a 10-minute micro-session in SkillTracker to defend your streak and self-identity.',
+    whyItWorks: 'Consistency is about identity confirmation. A 5-minute study session keeps your momentum alive.',
+    quote: 'Missing once is an accident. Missing twice is the start of a new habit.',
+    author: 'James Clear',
+    badgeColor: {
+      bg: 'bg-orange-500/10',
+      text: 'text-orange-400',
+      border: 'border-orange-500/20',
+    },
+  },
+  {
+    id: 'diffuse-mode-thinking',
+    title: 'Let Your Subconscious Solve Hard Problems',
+    technique: 'Focused vs. Diffuse Thinking',
+    category: 'Health & Energy',
+    summary: 'When you are stuck on a difficult bug or concept, staring harder at the screen only causes cognitive tunnel vision.',
+    actionStep: 'Step away from the screen for 10 minutes. Go for a walk without your phone or take a quick shower. Your brain will synthesize the answer in the background.',
+    whyItWorks: 'The brain operates in two modes: Focused mode (narrow analysis) and Diffuse mode (broad pattern synthesis). Breakthroughs happen in diffuse mode.',
+    quote: 'Diffuse mode is what happens when you let go of your attention and let your mind wander.',
+    author: 'Dr. Barbara Oakley (A Mind for Numbers)',
+    badgeColor: {
+      bg: 'bg-emerald-500/10',
+      text: 'text-emerald-400',
+      border: 'border-emerald-500/20',
+    },
+  },
+  {
+    id: 'eat-that-frog',
+    title: 'Tackle the Hardest Concept First',
+    technique: 'Eat That Frog Principle',
+    category: 'Productivity',
+    summary: 'Your cognitive peak and decision-making energy are highest early in your study session. Do not waste them on easy admin tasks.',
+    actionStep: 'Dedicate the very first 30 minutes to your most intimidating skill or problem before checking email, social feeds, or easy practice.',
+    whyItWorks: 'Tackling the toughest task first releases tension and creates an empowering psychological tailwind for the rest of the day.',
+    quote: 'If it’s your job to eat a frog, it’s best to do it first thing in the morning.',
+    author: 'Mark Twain / Brian Tracy',
+    badgeColor: {
+      bg: 'bg-fuchsia-500/10',
+      text: 'text-fuchsia-400',
+      border: 'border-fuchsia-500/20',
+    },
+  },
+  {
+    id: 'hydration-brain-speed',
+    title: 'Drink Water for 14% Faster Brain Speed',
+    technique: 'Neuro-Hydration Protocol',
+    category: 'Health & Energy',
+    summary: 'A mere 1-2% dehydration drops attention span, memory recall speed, and executive function by up to 14%.',
+    actionStep: 'Fill a 500ml water bottle right now. Take 3 deep breaths and a sip every time you complete a study timer sprint.',
+    whyItWorks: 'Brain tissue is 75% water. Dehydration causes temporary brain tissue shrinkage and raises cortisol stress levels.',
+    quote: 'Mental fatigue is often just cellular dehydration in disguise.',
+    author: 'Neurobiology Insights',
+    badgeColor: {
+      bg: 'bg-cyan-500/10',
+      text: 'text-cyan-400',
+      border: 'border-cyan-500/20',
+    },
+  },
+];

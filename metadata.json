@@ -1,0 +1,6 @@
+{
+  "name": "SkillTracker - Student Learning & Habit Tracker",
+  "description": "Visual skill learning tracker with animated backgrounds, goal milestones, study logging, weekly charts, and smart study reminder alarms.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

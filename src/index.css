@@ -1,0 +1,210 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Tabular figures for data metrics */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ========================================================
+   ReactBits Animated Background Theme Variables & Classes
+   Inspiration: reactbits.dev (Aurora & Wave Canvas Engine)
+   Supports dynamic CSS color theme variables & custom shade overrides
+   ======================================================== */
+
+:root {
+  /* Default Aurora Theme Variables (Cosmic Aurora) */
+  --reactbit-bg-base: #080B14;
+  --reactbit-wave-color-1: #4F46E5;
+  --reactbit-wave-color-2: #06B6D4;
+  --reactbit-wave-color-3: #10B981;
+  --reactbit-wave-color-4: #3B82F6;
+  --reactbit-accent: #06B6D4;
+  --reactbit-glow: rgba(79, 70, 229, 0.22);
+  --reactbit-mesh-opacity: 0.035;
+  --reactbit-particle-color: rgba(255, 255, 255, 0.35);
+  --reactbit-wave-blend: 0.5;
+  --reactbit-wave-speed: 1.0;
+}
+
+/* Light mode defaults */
+:root[data-theme='light'],
+.light {
+  --reactbit-bg-base: #F0F4F8;
+  --reactbit-particle-color: rgba(15, 23, 42, 0.25);
+  --reactbit-mesh-opacity: 0.05;
+}
+
+/* Custom CSS Classes for ReactBits Background */
+.reactbit-animated-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+  background-color: var(--reactbit-bg-base);
+  transition: background-color 0.4s ease;
+}
+
+.reactbit-canvas-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.reactbit-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 1.5px 1.5px, currentColor 1.5px, transparent 0);
+  background-size: 28px 28px;
+  opacity: var(--reactbit-mesh-opacity, 0.035);
+  pointer-events: none;
+}
+
+.reactbit-glow-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle 900px at 50% 25%, var(--reactbit-glow), transparent 75%);
+  pointer-events: none;
+}
+
+/* ReactBits Preset Theme Classes */
+.reactbit-theme-cosmic {
+  --reactbit-bg-base: #080B14;
+  --reactbit-wave-color-1: #4F46E5;
+  --reactbit-wave-color-2: #06B6D4;
+  --reactbit-wave-color-3: #10B981;
+  --reactbit-wave-color-4: #3B82F6;
+  --reactbit-accent: #06B6D4;
+  --reactbit-glow: rgba(79, 70, 229, 0.22);
+}
+
+.reactbit-theme-neon {
+  --reactbit-bg-base: #0B0716;
+  --reactbit-wave-color-1: #8B5CF6;
+  --reactbit-wave-color-2: #EC4899;
+  --reactbit-wave-color-3: #3B82F6;
+  --reactbit-wave-color-4: #D946EF;
+  --reactbit-accent: #EC4899;
+  --reactbit-glow: rgba(236, 72, 153, 0.22);
+}
+
+.reactbit-theme-emerald {
+  --reactbit-bg-base: #04120C;
+  --reactbit-wave-color-1: #059669;
+  --reactbit-wave-color-2: #10B981;
+  --reactbit-wave-color-3: #34D399;
+  --reactbit-wave-color-4: #0D9488;
+  --reactbit-accent: #10B981;
+  --reactbit-glow: rgba(16, 185, 129, 0.2);
+}
+
+.reactbit-theme-sunset {
+  --reactbit-bg-base: #140A09;
+  --reactbit-wave-color-1: #EA580C;
+  --reactbit-wave-color-2: #F59E0B;
+  --reactbit-wave-color-3: #E11D48;
+  --reactbit-wave-color-4: #FB923C;
+  --reactbit-accent: #F59E0B;
+  --reactbit-glow: rgba(245, 158, 11, 0.22);
+}
+
+.reactbit-theme-cyber {
+  --reactbit-bg-base: #030712;
+  --reactbit-wave-color-1: #1E293B;
+  --reactbit-wave-color-2: #38BDF8;
+  --reactbit-wave-color-3: #475569;
+  --reactbit-wave-color-4: #0EA5E9;
+  --reactbit-accent: #38BDF8;
+  --reactbit-glow: rgba(56, 189, 248, 0.2);
+}
+
+.reactbit-theme-amethyst {
+  --reactbit-bg-base: #100826;
+  --reactbit-wave-color-1: #7C3AED;
+  --reactbit-wave-color-2: #A855F7;
+  --reactbit-wave-color-3: #C084FC;
+  --reactbit-wave-color-4: #6366F1;
+  --reactbit-accent: #A855F7;
+  --reactbit-glow: rgba(168, 85, 247, 0.25);
+}
+
+.reactbit-theme-ocean {
+  --reactbit-bg-base: #041325;
+  --reactbit-wave-color-1: #0284C7;
+  --reactbit-wave-color-2: #06B6D4;
+  --reactbit-wave-color-3: #38BDF8;
+  --reactbit-wave-color-4: #0EA5E9;
+  --reactbit-accent: #38BDF8;
+  --reactbit-glow: rgba(6, 182, 212, 0.22);
+}
+
+/* Custom animated gradient glow */
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(2deg);
+  }
+}
+
+@keyframes ring-shake {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  20%, 60% {
+    transform: rotate(14deg);
+  }
+  40%, 80% {
+    transform: rotate(-14deg);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 8s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 14s ease-in-out infinite;
+}
+
+.animate-ring-shake {
+  animation: ring-shake 0.5s ease-in-out infinite;
+}
+
+/* Custom clean scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5);
+}
