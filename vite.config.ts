@@ -5,6 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    base: '/',
     base: '/SKILLTRACKER/',
     plugins: [react(), tailwindcss()],
     resolve: {
